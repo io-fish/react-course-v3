@@ -1,24 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import './index.css';
+// function Greeting() {
+//     return <h1>Hello World!</h1>;
+// }
 
-import { books } from './books';
-import Book from './Book';
+// function Greeting() {
+//     return React.createElement('h1', {}, 'hello world!');
+// }
 
-function BookList() {
-  return (
-    <>
-      <h1>amazon best sellers</h1>
-      <section className='booklist'>
-        {books.map((book) => {
-          return <Book {...book} key={book.id} />;
-        })}
-      </section>
-    </>
-  );
+
+// function Greeting() {
+//     return (
+//         <div>
+//             <h1>Hello World!</h1>
+//             <h2>It is {new Date().toLocaleTimeString()}</h2>
+//         </div>
+//     )
+// }
+
+function Greeting() {
+    return React.createElement(
+        'div',
+        {},
+        React.createElement('h1', {}, 'Hello World!'),
+        React.createElement('h2', {}, 'It is ' + new Date().toLocaleTimeString())
+    )
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(<BookList />);
+root.render(<Greeting />)
